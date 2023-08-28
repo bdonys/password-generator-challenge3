@@ -18,7 +18,13 @@ function generatePassword() {
     passwordLength = parseInt(prompt("Enter password length (8 - 128)"));
   }
   // Prompt for lowercase, uppercase, numbers, and special characters
+  const useLowercase = ;
+  const useUppercase = ;
+  const useNumbers = ;
+  const useSpecial = ;
 
+  //if statement that involves if the user had confirmed character types
+  
 
 
 
