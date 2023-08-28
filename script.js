@@ -24,7 +24,9 @@ function generatePassword() {
   const useSpecial = confirm("Would you like your password to have special characters?");
 
   //if statement that involves if the user had confirmed character types
-
+  if (useLowercase || useUppercase || useNumbers || useSpecial) {
+    
+  }
 
 
 
