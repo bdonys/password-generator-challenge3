@@ -15,7 +15,7 @@ function generatePassword() {
   // prompt for the length of the password
   let passwordLength = 0;
   while (passwordLength < 8 || passwordLength > 128) {
-    passwordLength = parseInt(prompt("Enter password length (8 - 128)"));
+    passwordLength = parseInt(prompt("Enter password length (8 - 128)")); // parseInt() here turns the string into a value otherwise the prompt wouldn't work
   }
   // Prompt for lowercase, uppercase, numbers, and special characters
   const useLowercase = confirm("Would you like your password to have lowercase characters?");
