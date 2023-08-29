@@ -1,37 +1,52 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-
+  // All variables for characters within a password
+const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const numbers = "0123456789";
+const specialChars = "!@#$%^&*(),./;'<>?:-_=+[]{}|/";
 
 // Write function to generate password
 // must be at least 8 characters long and no more than 128 characters
-function generatePassword() {
+function passwordOptions() {
 
-  // All variables for characters within a password
-  const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
-  const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const numbers = "0123456789";
-  const specialChars = "!@#$%^&*(),./;'<>?:-_=+[]{}|/";
+
+
   // prompt for the length of the password
   let passwordLength = 0;
   while (passwordLength < 8 || passwordLength > 128) {
     passwordLength = parseInt(prompt("Enter password length (8 - 128)")); // parseInt() here turns the string into a value otherwise the prompt wouldn't work
   }
   // Prompt for lowercase, uppercase, numbers, and special characters
-  const useLowercase = confirm("Would you like your password to have lowercase characters?");
-  const useUppercase = confirm("Would you like your password to have uppercase characters?");
-  const useNumbers = confirm("Would you like your password to have numbers?");
-  const useSpecial = confirm("Would you like your password to have special characters?");
+  let useLowercase = confirm("Would you like your password to have lowercase characters?");
+  let useUppercase = confirm("Would you like your password to have uppercase characters?");
+  let useNumbers = confirm("Would you like your password to have numbers?");
+  let useSpecial = confirm("Would you like your password to have special characters?");
 
   //if statement that involves if the user had confirmed character types
-  if (!(useLowercase || useUppercase || useNumbers || useSpecial)) {
+  if (useLowercase === false && useUppercase === false && useNumbers === false && useSpecial === false) {
     alert("You must have at least one character!");
   }
-
-
+  var passwordOptions = {
+    length: passwordLength,
+    lowercase: useLowercase,
+    uppercase: useUppercase,
+    numbers: useNumbers,
+    special: useSpecial,
+  }
+  return passwordOptions;
 
 }
 
+function generatePassword() {
+  var options = passwordOptions();
+  console.log(options);
+}
+// 1. couple if statements to check what the user selected and put them into an array
+// let possibleChars = []
+// for loop will spit results into the password below
+// let password = []; .join('') // this slices the array, takes out all the commas and spaces turns it into a string
 
 
 // Write password to the #password input
