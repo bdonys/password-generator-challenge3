@@ -57,11 +57,16 @@ function generatePassword() {
   }
 
   console.log(possibleOptions);
+
+  let password = "";
+  for (let i = 0; i < options.length; i++) {
+    const random = Math.floor(Math.random() * possibleOptions.length);
+    password += possibleOptions[random];
+  }
+  return password;
 }
-// 1. couple if statements to check what the user selected and put them into an array
-// let possibleChars = []
-// for loop will spit results into the password below
-// let password = []; .join('') // this slices the array, takes out all the commas and spaces turns it into a string
+
+
 
 
 // Write password to the #password input
