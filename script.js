@@ -36,12 +36,27 @@ function passwordOptions() {
     special: useSpecial,
   }
   return passwordOptions;
-
 }
 
 function generatePassword() {
   var options = passwordOptions();
   console.log(options);
+
+  let possibleOptions = "";
+  if (options.lowercase) {
+    possibleOptions += lowercaseChars;
+  }
+  if (options.uppercase) {
+    possibleOptions += uppercaseChars;
+  }
+  if (options.numbers) {
+    possibleOptions += numbers;
+  }
+  if (options.special) {
+    possibleOptions += specialChars;
+  }
+
+  console.log(possibleOptions);
 }
 // 1. couple if statements to check what the user selected and put them into an array
 // let possibleChars = []
