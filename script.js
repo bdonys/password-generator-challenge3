@@ -17,6 +17,9 @@ function passwordOptions() {
   let passwordLength = 0;
   while (passwordLength < 8 || passwordLength > 128) {
     passwordLength = parseInt(prompt("Enter password length (8 - 128)")); // parseInt() here turns the string into a value otherwise the prompt wouldn't work
+    if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+      alert("Please enter a valid password length between 8 - 128.");
+    }
   }
   // Prompt for lowercase, uppercase, numbers, and special characters
   let useLowercase = confirm("Would you like your password to have lowercase characters?");
